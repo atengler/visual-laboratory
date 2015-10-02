@@ -1,0 +1,126 @@
+body {
+  background: #d1d3d4;
+}
+
+.flip-button {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-family: 'Arial';
+  padding: 5px 10px;
+  background: #00bedf;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Hexagon positions and rotations */
+
+#hex1 {
+  top: 5px;
+  left: 5px;
+}
+
+#hex2 {
+  top: 5px;
+  left: 240px;
+}
+
+#hex1.flipped > .hex-elements,
+#hex2.flipped > .hex-elements {
+  transform: rotateY( 180deg );
+  transform: translateX( -100% ) rotateY( -180deg );
+}
+
+/* Common hexagon properties */
+
+.hexagon { 
+  width: 200px;
+  height: 230px;
+  position: absolute;
+  perspective: 800px;
+}
+
+.hex-elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
+}
+
+.hex-elements .middle {
+  margin: 0;
+  top: 50px;
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 130px;
+  backface-visibility: hidden;
+}
+
+.hex-elements .front .middle {
+  background: #959899;
+}
+
+.hex-elements .back .middle {
+  background: #0088a0;
+  transform: rotateY( 180deg );
+}
+
+.hex-elements .top {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: -229px;
+}
+
+.hex-elements .front .top {
+  width: 0;
+  border-bottom: 50px solid #959899;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hex-elements .back .top {
+  width: 0;
+  border-bottom: 50px solid #0088a0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotateY( 180deg );
+}
+
+.hex-elements .bottom {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 179px;
+}
+
+.hex-elements .front .bottom {
+  width: 0;
+  border-top: 50px solid #959899;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hex-elements .back .bottom {
+  width: 0;
+  border-top: 50px solid #0088a0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotateY( 180deg );
+}
+
+.front, .back {
+  margin: 0px;
+}

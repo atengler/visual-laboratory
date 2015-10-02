@@ -1,0 +1,148 @@
+.flip-button {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-family: 'Arial';
+  padding: 5px 10px;
+  background: #00bedf;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Top section */
+
+.top {
+  width: 200px;
+  height: 50px;
+  perspective: 800px;
+  position: relative;
+}
+
+#top-element {
+  top: -50px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
+}
+
+#top-element figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#top-element .front {
+  width: 0;
+  border-bottom: 50px solid red;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+#top-element .back {
+  width: 0;
+  border-bottom: 50px solid blue;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotateY( 180deg );
+}
+
+#top-element.flipped {
+  transform: rotateY( 180deg );
+  transform: translateX( -100% ) rotateY( -180deg );
+}
+
+/* Middle section */
+
+.middle { 
+  width: 200px;
+  height: 130px;
+  position: relative;
+  perspective: 800px;
+}
+
+#middle-element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
+}
+
+#middle-element figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#middle-element .front {
+  background: red;
+}
+#middle-element .back {
+  background: blue;
+  transform: rotateY( 180deg );
+}
+
+#middle-element.flipped {
+  transform: rotateY( 180deg );
+  transform: translateX( -100% ) rotateY( -180deg );
+}
+
+/* Bottom section */
+
+.bottom {
+  margin-top: -50px;
+  width: 200px;
+  height: 50px;
+  perspective: 800px;
+  position: relative;
+}
+
+#bottom-element {
+  bottom: -50px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
+}
+
+#bottom-element figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#bottom-element .front {
+  width: 0;
+  border-top: 50px solid red;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+#bottom-element .back {
+  width: 0;
+  border-top: 50px solid blue;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotateY( 180deg );
+}
+
+#bottom-element.flipped {
+  transform: rotateY( 180deg );
+  transform: translateX( -100% ) rotateY( -180deg );
+}
