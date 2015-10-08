@@ -14,35 +14,84 @@
   </head>
   <body>
     <!-- main content -->
-
-    <div class="hexagon" id ="hex1">
-      <div class="hex-elements">
-        <figure class="front">
-          <div class="top"></div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </figure>
-        <figure class="back">
-          <div class="top"></div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </figure>
+    <div id="hex-absolute-container">
+    <div id="hex-relative-container">
+      <div class="hexagon-lg" id ="hex1">
+        <div class="hex-elements">
+          <figure class="front">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+          <figure class="back">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+        </div>
       </div>
+
+      <div class="hexagon-lg" id ="hex2">
+        <div class="hex-elements">
+          <figure class="front">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+          <figure class="back">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="hexagon-lg" id ="hex3">
+        <div class="hex-elements">
+          <figure class="front">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+          <figure class="back">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="hexagon-lg" id ="hex4">
+        <div class="hex-elements">
+          <figure class="front">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+          <figure class="back">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="hexagon-sm" id ="hex5">
+        <div class="hex-elements">
+          <figure class="front">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+          <figure class="back">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+          </figure>
+        </div>
+      </div>
+
     </div>
-
-    <div class="hexagon" id ="hex2">
-      <div class="hex-elements">
-        <figure class="front">
-          <div class="top"></div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </figure>
-        <figure class="back">
-          <div class="top"></div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </figure>
-      </div>
     </div>
 
     <a class="flip-button" href="#">Flip</a>
@@ -60,6 +109,18 @@
       $('.flip-button').hover(
         function(){ $('#hex2').addClass('flipped') },
         function(){ $('#hex2').removeClass('flipped') }
+      )
+    </script>
+    <script>
+      $('.flip-button').hover(
+        function(){ $('#hex3').addClass('flipped') },
+        function(){ $('#hex3').removeClass('flipped') }
+      )
+    </script>
+    <script>
+      $('.flip-button').hover(
+        function(){ $('#hex4').addClass('flipped') },
+        function(){ $('#hex4').removeClass('flipped') }
       )
     </script>
     <!-- end my js -->
