@@ -56,56 +56,67 @@ body {
 #hex-lg-1 {
   top: 136px;
   left: 3px;
+  z-index: 1;
 }
 
 #hex-lg-2 {
   top: 32px;
   left: 188px;
+  z-index: 2;
 }
 
 #hex-lg-3 {
   top: 136px;
   left: 372px;
+  z-index: 3;
 }
 
 #hex-lg-4 {
   top: 86px;
   left: 465px;
+  z-index: 4;
 }
 
 #hex-sm-1 {
   top: 161px;
   left: 97px;
+  z-index: 5;
 }
 
 #hex-sm-2 {
   top: 136px;
   left: 142px;
+  z-index: 6;
 }
 
 #hex-sm-3 {
   top: 30px;
   left: 142px;
+  z-index: 7;
 }
 
 #hex-sm-4 {
   top: 4px;
   left: 188px;
+  z-index: 8;
 }
 
 #hex-sm-5 {
   top: 30px;
   left: 328px;
+  z-index: 9;
 }
 
 #hex-sm-6 {
   top: 136px;
   left: 328px;
+  z-index: 10;
 }
 
 #hex-sm-7 {
   top: 84px;
   left: 420px;
+  z-index: 11;
 }
 
 /* ANIMATE IN */
@@ -227,73 +238,62 @@ body {
   transform-origin: right center;
 }
 
-.hexagon-lg .hex-elements .middle {
-  margin: 0;
-  top: 51px;
-  display: block;
+.hexagon-lg .hex:before {
+  content: " ";
+  width: 0; height: 0;
+  border-left: 93px solid transparent;
+  border-right: 93px solid transparent;
   position: absolute;
+  top: -51px;
+}
+
+.hexagon-lg .front .hex:before {
+  border-bottom: 51px solid rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
+}
+
+.hexagon-lg .back .hex:before {
+  border-bottom: 51px solid rgba(0,136,160,0.45);
+  transform: rotateY( 180deg );
+}
+
+.hexagon-lg .hex {
+  margin-top: 51px;
   width: 186px;
   height: 105px;
-  backface-visibility: hidden;
-}
-
-.hexagon-lg .hex-elements .front .middle {
-  background: rgba(149,152,153,0.33);
-}
-
-.hexagon-lg .hex-elements .back .middle {
-  background: rgba(0,136,160,0.45);
-  transform: rotateY( 180deg );
-}
-
-.hexagon-lg .hex-elements .top {
-  margin: 0;
-  display: block;
   position: absolute;
-  width: 186px;
-  height: 0px;
-  backface-visibility: hidden;
   top: 0px;
-}
-
-.hexagon-lg .hex-elements .front .top {
-  width: 0;
-  border-bottom: 51px solid rgba(149,152,153,0.33);
-  border-left: 93px solid transparent;
-  border-right: 93px solid transparent;
-}
-
-.hexagon-lg .hex-elements .back .top {
-  width: 0;
-  border-bottom: 51px solid rgba(0,136,160,0.45);
-  border-left: 93px solid transparent;
-  border-right: 93px solid transparent;
-  transform: rotateY( 180deg );
-}
-
-.hexagon-lg .hex-elements .bottom {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 186px;
-  height: 0px;
+  left: 0px;
   backface-visibility: hidden;
-  top: 156px;
 }
 
-.hexagon-lg .hex-elements .front .bottom {
-  width: 0;
-  border-top: 51px solid rgba(149,152,153,0.33);
-  border-left: 93px solid transparent;
-  border-right: 93px solid transparent;
+.hexagon-lg .front .hex {
+  background-color: rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
 }
 
-.hexagon-lg .hex-elements .back .bottom {
-  width: 0;
-  border-top: 51px solid rgba(0,136,160,0.45);
-  border-left: 93px solid transparent;
-  border-right: 93px solid transparent;
+.hexagon-lg .back .hex {
+  background-color: rgba(0,136,160,0.45);
   transform: rotateY( 180deg );
+}
+
+.hexagon-lg .hex:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -51px;
+  border-left: 93px solid transparent;
+  border-right: 93px solid transparent;
+}
+
+.hexagon-lg .front .hex:after {
+  border-top: 51px solid rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
+}
+
+.hexagon-lg .back .hex:after {
+  border-top: 51px solid rgba(0,136,160,0.45);
+  transform: rotateY(180deg);
 }
 
 /* Small hexagon */
@@ -313,65 +313,60 @@ body {
   transform-origin: right center;
 }
 
-.hexagon-sm .hex-elements .middle {
-  margin: 0;
-  top: 27px;
-  display: block;
-  position: absolute;
-  width: 92px;
-  height: 54px;
-  backface-visibility: hidden;
-}
-
-.hexagon-sm .hex-elements .front .middle {
-  background: rgba(149,152,153,0.33);
-}
-
-.hexagon-sm .hex-elements .back .middle {
-  background: rgba(0,136,160,0.45);
-  transform: rotateY( 180deg );
-}
-
-.hexagon-sm .hex-elements .top {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 186px;
-  height: 0px;
-  backface-visibility: hidden;
-  top: 1px;
+.hexagon-sm .hex:before {
+  content: " ";
+  width: 0; height: 0;
   border-left: 46px solid transparent;
   border-right: 46px solid transparent;
-  width: 0;
+  position: absolute;
+  top: -26px;
 }
 
-.hexagon-sm .hex-elements .front .top {
-  border-bottom: 26px solid rgba(149,152,153,0.33);
+.hexagon-sm .front .hex:before {
+  border-bottom: 26px solid rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
 }
 
-.hexagon-sm .hex-elements .back .top {
+.hexagon-sm .back .hex:before {
   border-bottom: 26px solid rgba(0,136,160,0.45);
   transform: rotateY( 180deg );
 }
 
-.hexagon-sm .hex-elements .bottom {
-  margin: 0;
-  display: block;
+.hexagon-sm .hex {
+  margin-top: 26px;
+  width: 92px;
+  height: 54px;
   position: absolute;
-  width: 186px;
-  height: 0px;
+  top: 0px;
+  left: 0px;
   backface-visibility: hidden;
-  top: 81px;
+}
+
+.hexagon-sm .front .hex {
+  background-color: rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
+}
+
+.hexagon-sm .back .hex {
+  background-color: rgba(0,136,160,0.45);
+  transform: rotateY( 180deg );
+}
+
+.hexagon-sm .hex:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -26px;
   border-left: 46px solid transparent;
   border-right: 46px solid transparent;
-  width: 0;
 }
 
-.hexagon-sm .hex-elements .front .bottom {
-  border-top: 26px solid rgba(149,152,153,0.33);
+.hexagon-sm .front .hex:after {
+  border-top: 26px solid rgba(149,152,153,0.4);
+  transform: rotateY(0deg);
 }
 
-.hexagon-sm .hex-elements .back .bottom {
+.hexagon-sm .back .hex:after {
   border-top: 26px solid rgba(0,136,160,0.45);
   transform: rotateY( 180deg );
 }
