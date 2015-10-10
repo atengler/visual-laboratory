@@ -53,6 +53,10 @@ body {
   height: 220px;
 }
 
+.front, .back {
+  margin: 0px;
+}
+
 #hex-lg-1 {
   top: 136px;
   left: 3px;
@@ -369,10 +373,4 @@ body {
 .hexagon-sm .back .hex:after {
   border-top: 26px solid rgba(0,136,160,0.45);
   transform: rotateY( 180deg );
-}
-
-/* Common */
-
-.front, .back {
-  margin: 0px;
 }
